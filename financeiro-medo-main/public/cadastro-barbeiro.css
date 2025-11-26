@@ -1,0 +1,664 @@
+:root {
+    --primary-color: #8B0000;
+    --secondary-color: #000000;
+    --accent-color: #FF0000;
+    --light-color: #F5F5F5;
+    --dark-color: #1A1A1A;
+    --table-bg: rgba(0, 0, 0, 0.5);
+    --hover-bg: rgba(139, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F5F5;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--light-color);
+}
+
+/* HEADER MENOR E CENTRALIZADO */
+header {
+    background: linear-gradient(135deg, #262626 0%, #1a1a1a 100%);
+    color: #dedede;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border-bottom: 3px solid #8B0000;
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header h1 i {
+    color: #FF0000;
+    font-size: 1.6rem;
+}
+
+/* NAVEGAÇÃO COM BOTÕES MENORES */
+nav {
+    width: 100%;
+}
+
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-button {
+    background: #333;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid transparent;
+    min-width: 100px;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+.nav-button.active {
+    background: var(--primary-color);
+}
+
+/* REMOVIDO O HOVER DOS BOTÕES DO HEADER */
+.nav-button:hover {
+    background: #333;
+    transform: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.nav-button.active:hover {
+    background: var(--primary-color);
+}
+
+.nav-button i {
+    font-size: 0.9rem;
+}
+
+#main-container {
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #262626;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid #333;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8rem;
+}
+
+h2 {
+    text-align: center;
+    margin: 30px 0 20px 0;
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #333;
+    font-size: 1.5rem;
+}
+
+form {
+    background: #262626;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+/* LAYOUT VERTICAL COMPLETO - TODOS OS CAMPOS UM EM BAIXO DO OUTRO */
+.form-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    color: var(--light-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #464646;
+    color: var(--light-color);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    margin: 0;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
+}
+
+textarea {
+    resize: none;
+    min-height: 80px;
+}
+
+/* Container de busca HORIZONTAL - BOTÃO PEQUENO AO LADO DO CPF */
+.search-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.cpf-box {
+    flex: 1;
+}
+
+.btn-buscar {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 44px;
+    font-size: 13px;
+    white-space: nowrap;
+    min-width: 140px;
+}
+
+.btn-buscar:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* Container do salário com botão VERTICAL */
+.salario-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.salario-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.salario-container input {
+    flex: 1;
+    margin: 0;
+}
+
+.btn-salario-medio {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-salario-medio:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* BOTÕES VERTICAIS - UM EM BAIXO DO OUTRO */
+.buttons-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+.alinhaBtns {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.alinhaBtns:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.alinhaBtns:nth-child(2) {
+    background: #333;
+}
+
+.alinhaBtns:nth-child(2):hover {
+    background: #555;
+}
+
+.alinhaBtns:nth-child(3) {
+    background: #444;
+}
+
+.alinhaBtns:nth-child(3):hover {
+    background: #666;
+}
+
+/* Botão de listar funcionários */
+.btn-listar {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.btn-listar:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+/* SEÇÃO DA TABELA DENTRO DO CONTAINER */
+.table-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+/* Tabela de funcionários DENTRO DO CONTAINER */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: var(--table-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #333;
+    padding: 12px;
+    text-align: left;
+    font-size: 14px;
+}
+
+table th {
+    background: var(--primary-color);
+    color: var(--light-color);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+table td {
+    color: var(--light-color);
+}
+
+table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #262626;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border: 1px solid #333;
+}
+
+.modal-header {
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.modal-header h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-body {
+    padding: 20px;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.modal-footer {
+    padding: 15px 20px;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid #333;
+}
+
+/* Tabela no modal */
+.salarios-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--table-bg);
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.salarios-table th {
+    background: var(--primary-color);
+    color: var(--light-color);
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid #333;
+}
+
+.salarios-table td {
+    padding: 12px 15px;
+    border: 1px solid #333;
+    color: var(--light-color);
+}
+
+.salarios-table tr:hover {
+    background-color: var(--hover-bg);
+}
+
+.salarios-nota {
+    color: #bdc3c7;
+    font-size: 12px;
+    margin-top: 15px;
+    font-style: italic;
+    text-align: center;
+}
+
+.btn-secondary {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-secondary:hover {
+    background: #555;
+}
+
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-top: 3px solid var(--accent-color);
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    header {
+        padding: 0.8rem;
+    }
+
+    .header-content {
+        gap: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .nav-buttons {
+        gap: 0.4rem;
+    }
+
+    .nav-button {
+        padding: 0.5rem 0.8rem;
+        min-width: 90px;
+        font-size: 0.8rem;
+    }
+
+    #main-container {
+        margin: 20px auto;
+        width: 95%;
+        padding: 20px;
+        max-width: none;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 10px 12px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-buscar {
+        width: 100%;
+        height: auto;
+        margin-top: 0;
+    }
+
+    .salario-container {
+        gap: 10px;
+    }
+
+    .btn-salario-medio {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    table th, table td {
+        padding: 8px 10px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px;
+    }
+
+    .alinhaBtns, .btn-listar {
+        padding: 12px 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-button {
+        width: 100%;
+        max-width: 180px;
+        padding: 0.5rem 0.7rem;
+        font-size: 0.75rem;
+    }
+
+    #main-container {
+        margin: 15px auto;
+        width: 98%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-vertical {
+        gap: 15px;
+    }
+
+    .alinhaBtns, .btn-listar {
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    table th, table td {
+        padding: 6px 8px;
+    }
+
+    .btn-buscar {
+        min-width: auto;
+        font-size: 12px;
+    }
+}
